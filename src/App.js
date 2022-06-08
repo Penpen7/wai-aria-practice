@@ -1,24 +1,32 @@
-import logo from './logo.svg';
 import './App.css';
+import {useState} from 'react';
+import Modal from './Edit';
+import TodoCard from './TodoCard';
+
 
 function App() {
+  const [show, setShow] = useState(false)
+  const [todos, setTodos] = useState([])
+
+  const onEdit = (e) => {
+    setShow(true)
+  }
+
+  const addTodo = (title, detail) => {
+    setTodos([...todos, {title: title, detail: detail}])
+  }
+
+  console.log(todos)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main>
+      <Modal show={show} setShow={setShow} addTodo={addTodo} />
+      {todos.map((v) =>
+        <TodoCard title={v.title} detail={v.detail} />
+      )}
+
+      <button onClick={onEdit}>Add</button>
+    </main>
   );
 }
 
