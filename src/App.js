@@ -8,18 +8,15 @@ function App() {
   const [show, setShow] = useState(false)
   const [todos, setTodos] = useState([])
 
-  const onEdit = (e) => {
-    setShow(true)
-  }
+  const onEdit = (e) => setShow(true)
 
   const addTodo = (title, detail) => {
     setTodos([...todos, {title: title, detail: detail}])
   }
 
-  console.log(todos)
-
   return (
     <main>
+      <h1>TODO App</h1>
       <Modal show={show} setShow={setShow} addTodo={addTodo} />
       {todos.map((v) =>
         <TodoCard title={v.title} detail={v.detail} />

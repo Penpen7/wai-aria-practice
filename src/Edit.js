@@ -23,12 +23,14 @@ const Modal = ({show, setShow, addTodo}) => {
 
   return (
     show ?
-      <div>
-        < h1 > Edit</h1 >
-        <input type="text" value={title} onChange={onChangeTitle} />
-        <input type="text" value={detail} onChange={onChangeDetail} />
-        <button onClick={onClickOK}>OK</button>
-        <button onClick={onClickCancel}>Cancel</button>
+      <div id="overlay">
+        <div id="content">
+          <h1>Edit</h1>
+          <input type="text" value={title} onChange={onChangeTitle} />
+          <input type="text" value={detail} onChange={onChangeDetail} />
+          <button onClick={onClickOK}>OK</button>
+          <button onClick={onClickCancel}>Cancel</button>
+        </div>
       </div > : null
   )
 }

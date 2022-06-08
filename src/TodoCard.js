@@ -7,8 +7,8 @@ const TodoCard = ({title, detail}) => {
   }
 
   return (<div className="todo-card">
-    <h1>{title}</h1>
     <input type="checkbox" id="scales" name="scales" checked={isChecked} onChange={onChange} />
+    <h1>{title}</h1>
     <p>{detail}</p>
     <button>Edit</button>
     <button>Delete</button>
