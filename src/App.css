@@ -37,7 +37,7 @@
   }
 }
 
-#overlay{
+[role="dialog"]{
 /*　画面全体を覆う設定　*/
   position:fixed;
   top:0;
@@ -60,9 +60,37 @@
   background:#fff;
 }
 
-#content h1 {
+#dialog_label {
   text-align: center;
 }
+
+.dialog_form_item {
+  margin-bottom: 1rem;
+}
+
+.label_text {
+  box-sizing: border-box;
+  padding-right: 0.5em;
+  display: inline-block;
+  font-size: 16px;
+  width: 20%;
+  text-align: right;
+}
+
+.input_text {
+  width: 60%;
+}
+
+.dialog_form_actions {
+  display:flex;
+  justify-content: center;
+}
+
+.dialog_form_actions > button {
+  width: 25%;
+}
+
+
 
 main {
   padding:0 20%;
